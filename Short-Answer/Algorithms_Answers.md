@@ -18,7 +18,7 @@ In a n-storey building, the floors are ordered so we start from the zeroth floor
 Therefore I'll be using binary search since it's the one with the least runtime O(log n)
 
 Steps
-  0. Have 2 variable that keeps count of the flloo when it breaks
+  0. Have a variable that keeps count of the egg when it breaks
   1. Get the middle of array gotten from spliting the number of floors, go to the floor and drop the egg
        -if egg breaks,
           add one to the count variable
