@@ -96,9 +96,36 @@ class SortingRobot:
         """
         Sort the robot's list.
         """
-        # Fill this out
-        pass
+        # # Fill this out
+        #First turn light on
+        self.set_light_on()
+        #loop through as long as light is on
+        while self.light_is_on():
+            # set the self.item to the first item in the list
+            self.swap_item()
+            # Loop through list ensuring monster can move to the right
+            while self.can_move_right()==True:
+                #move to the right
+                self.move_right()
+                #compare items, if right item is bigger swap it
+                if self.compare_item() == 1 :
+                    self.swap_item()
+            #loop through the list to the first position
+            while self.can_move_left() and self.compare_item() is not None:
+                # move left
+                self.move_left()
+            #set the self.item to the first item in the list
+            self.swap_item()
+            #check to see if monster cannot move to the right
+            if self.can_move_right() == False:
+                #Shut the lights
+                self.set_light_off()
+            #otherwise    
+            else:
+                #move right
+                self.move_right()
 
+        
 
 if __name__ == "__main__":
     # Test our your implementation from the command line
